@@ -19,9 +19,9 @@ int _printf(const char *format, ...)
 	{
 		_putchar(*format);
 		nchr++;
-	} else if (*format == '%' && __format_tracker__(*(format + 1)))
+	} else if (*format == '%' && __format_checker__(*(format + 1)))
 	{
-		if (__format_tracker__(*(format + 1)) == 's')
+		if (__format_checker__(*(format + 1)) == 's')
 		{
 			if (*(format + 1) == 's')
 			{
@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 				__print_string__("", c, *(format + 1));
 			}
 		}
-		if (__format_tracker__(*(format + 1)) == 'i')
+		if (__format_checker__(*(format + 1)) == 'i')
 		{
 			__print_number__(va_arg(ap, int), 10, *(format + 1));
 		}
