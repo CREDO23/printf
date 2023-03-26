@@ -10,6 +10,8 @@
  */
 void __print_string__(char *str, char c, char specifier)
 {
+	if (str != NULL)
+	{
 	if (specifier == 's')
 	{
 
@@ -19,6 +21,7 @@ void __print_string__(char *str, char c, char specifier)
 
 			str++;
 		}
+	}
 	}
 
 	if (specifier == 'c')

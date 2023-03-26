@@ -6,12 +6,12 @@
  */
 int _printf(char *format, ...)
 {
-		int i = 0;
-		int nchr = 0;
+		int i = 0, tmp, nchr = 0;
 		va_list ap;
-		int tmp;
 
 		va_start(ap, format);
+		if (format == NULL)
+			return (-1);
 	while (*format != '\0')
 	{
 	if (*format != '%' || (*format == '%' && *(format + 1) == '%'))
