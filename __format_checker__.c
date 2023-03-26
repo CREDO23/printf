@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * __format_checker__ - The  function to check the conversion format
  * @c: The conversion specifier

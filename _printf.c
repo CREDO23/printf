@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * _printf - The printf funtion
  * @format: The string which content specifiers
