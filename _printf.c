@@ -4,7 +4,7 @@
  *
  * Return: The numer of characters printed
  */
-int _printf(char *format, ...)
+int _printf(const char *format, ...)
 {
 		int i = 0, tmp, nchr = 0;
 		va_list ap;

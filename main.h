@@ -10,6 +10,6 @@ int _putchar(char c);
 void __print_number__( int num, unsigned int base, char specifier );
 void __print_string__(char *str, char c, char specifier);
 char __format_tracker__(char c);
-int _printf(char *format, ...);
+int _printf(const char *format, ...);
 
 #endif
