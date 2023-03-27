@@ -15,7 +15,6 @@ int print_int(va_list list)
 	return (len);
 }
 
-
 /**
  * print_uns - Prints Unsigned integers
  * @list: List of all of the argumets
@@ -28,11 +27,12 @@ int print_uns(va_list list)
 
 	n = va_arg(list, unsigned int);
 
-	if (n >= 0)
-		return (print_uns_number(num));
+	if (n == 0)
+		return (print_uns_number(n));
 
-	if (num < 1)
+	if (n < 1)
 		return (-1);
+	return (print_uns_number(n));
 }
 
 /**

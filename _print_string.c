@@ -18,7 +18,7 @@ int print_rev_str(va_list arg)
 	if (str == NULL)
 		return (-1);
 
-	ptr = rev_string(str);
+	ptr = rev_str(str);
 
 	if (ptr == NULL)
 		return (-1);
@@ -56,7 +56,7 @@ int rot13(va_list list)
 		{
 			if (str[i] == from[j])
 			{
-				_puthar(to[j]);
+				_putchar(to[j]);
 				break;
 			}
 		}

@@ -54,12 +54,9 @@ int print_binary(va_list list)
 
 	str[i] = '\0';
 	reverse = rev_str(str);
-	if (rev_str == NULL)
-		return (-1);
 
 	write_str(reverse);
 	free(str);
-	free(rev_str);
 	return (len);
 }
 
@@ -94,13 +91,13 @@ int print_octal(va_list list)
 		num /= 8;
 	}
 
-	octal_rep[len] = '\0';
+	oct_rep[len] = '\0';
 	rev = rev_str(oct_rep);
 	if (rev == NULL)
 		return (-1);
 
 	write_str(rev);
-	free(oct);
+	free(oct_rep);
 	free(rev);
 	return (len);
 }
@@ -144,13 +141,13 @@ int print_hex_lower(va_list list)
 	}
 
 	hex_rep[len] = '\0';
-	rev_hex = rev_str(hex_rep);
-	if (rev_hex == NULL)
+	rev = rev_str(hex_rep);
+	if (rev == NULL)
 		return (-1);
 
-	write_str(rev_hex);
+	write_str(rev);
 	free(hex_rep);
-	free(rev_hex);
+	free(rev);
 	return (len);
 }
 
@@ -196,13 +193,13 @@ int print_hex_upper(va_list list)
 	}
 
 	hex_rep[len] = '\0';
-	rev_hex = rev_str(hex_rep);
-	if (rev_hex == NULL)
+	rev = rev_str(hex_rep);
+	if (rev == NULL)
 		return (-1);
 
-	write_str(rev_hex);
+	write_str(rev);
 	free(hex_rep);
-	free(rev_hex);
+	free(rev);
 	return (len);
 }
 

@@ -8,7 +8,7 @@
  *
  * Return: A total count of the characters printed.
  */
-int print(const char *format, conver_t conv_list[], va_list arg_list)
+int print(const char *format, conv_type conv_list[], va_list arg_list)
 {
 	int i, j, nb_chars, chars;
 
@@ -17,7 +17,6 @@ int print(const char *format, conver_t conv_list[], va_list arg_list)
 	{
 		_putchar(format[i]);
 		chars++;
-
 		if (format[i] == '%')
 		{
 			for (j = 0; conv_list[j].spec != NULL; j++)
@@ -25,25 +24,27 @@ int print(const char *format, conver_t conv_list[], va_list arg_list)
 				if (format[i + 1] == conv_list[j].spec[0])
 				{
 					nb_chars = conv_list[j].func(arg_list);
-					if (r_val == -1)
+					if (nb_chars == -1)
 						return (-1);
 					chars += nb_chars;
 					break;
 				}
 			}
 			if (format[i + 1] == '%')
+			{
 				_putchar('%');
 				chars++;
-			if (conv_list[j].spec == NULL && format[i + 1] != ' ')
+			}
+			if (conv_list[j].spec == NULL && format[i + 1] != ' ' && format[i] != '%')
 			{
 				if (format[i + 1] != '\0')
 				{
-					_putchar(format[i]);
-					_putchar(format[i + 1]);
-					chars += 2;
+				_putchar(format[i]);
+				_putchar(format[i + 1]);
+				chars += 2;
 				}
 				else
-					return (-1);
+				return (-1);
 			}
 			i++;
 		}
