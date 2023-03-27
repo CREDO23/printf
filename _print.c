@@ -15,8 +15,6 @@ int print(const char *format, conv_type conv_list[], va_list arg_list)
 	chars = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		_putchar(format[i]);
-		chars++;
 		if (format[i] == '%')
 		{
 			for (j = 0; conv_list[j].spec != NULL; j++)
@@ -30,12 +28,7 @@ int print(const char *format, conv_type conv_list[], va_list arg_list)
 					break;
 				}
 			}
-			if (format[i + 1] == '%')
-			{
-				_putchar('%');
-				chars++;
-			}
-			if (conv_list[j].spec == NULL && format[i + 1] != ' ' && format[i] != '%')
+			if (conv_list[j].spec == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
@@ -47,6 +40,11 @@ int print(const char *format, conv_type conv_list[], va_list arg_list)
 				return (-1);
 			}
 			i++;
+		}
+		else
+		{
+			_putchar(format[i]);
+			chars++;
 		}
 	}
 	return (chars);

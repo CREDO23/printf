@@ -36,6 +36,17 @@ int print_uns(va_list list)
 }
 
 /**
+ * print_percent - Prints a percent symbol
+ * @list: list of arguments
+ * Return: Will return the amount of characters printed.
+ */
+int print_percent(__attribute__((unused))va_list list)
+{
+	_putchar('%');
+	return (1);
+}
+
+/**
  * print_str - Prints a string
  * @list: list of arguments
  *
